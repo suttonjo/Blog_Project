@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 # gem irb now depends on psych, but version 5 will not bundle currently  
-gem("psych", "~> 4")  
+gem("psych", "~> 5")  
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
