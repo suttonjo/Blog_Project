@@ -1,0 +1,16 @@
+<div class="centering">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="has-text-centered title is-size-1 fade-in">Welcome</h1>
+  <% if current_account %>
+    <h1 class="has-text-centered title is-size-1 fade-in"> <%= @account.username %></h1>
+  <% else %>
+    <h1 class="has-text-centered title is-size-1 fade-in">to <span class="has-text-primary">Blurb</span></h1>
+  <% end %>
+  <div class="has-text-centered">
+    <%= link_to "Posts", posts_path, class: "button is-primary has-text-centered mr-1"%>
+    <% if current_account %>
+      <%= link_to "New Post", new_post_path, class: "button is-primary" %>
+    <% end %>
+  
+  </div>
+</div>

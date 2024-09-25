@@ -1,0 +1,40 @@
+<div class="container is-fluid">
+  <div class="notification">
+    <h1 class="title is-size-3"> Posts </h1>
+  </div>
+
+  <div class="columns is-multiline">
+    <% @posts.each do |post| %>
+
+      <a href="<%= post_path(post) %>" class="has-text-white">
+        <div class="column is-one-third">
+          <div class="card">
+
+            <% if post.image.present? %>
+              <div class="card-image">
+                <%= image_tag post.image, class: "card-img-top img" %>
+              </div>
+
+            <% else %>
+              <div class="card-image">
+                <%= image_tag("noImage.jpg", class: "card-img-top img") %>
+              </div>
+            <% end %>
+            
+            <div class="card-content">
+              <div class="content ml-4">
+                <h1><%= post.title %></h1>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="<%= edit_post_path(post) %>" class="card-footer-item">Edit</a>
+              <%= link_to 'Destroy', post, method: :delete, form: { data: { turbo_confirm: "Are you sure...?" } }, class: "card-footer-item" %>
+            </footer>
+          </div>  
+        </div>
+      </a>
+    <% end %>
+  </div>  
+  <br>
+  <%= link_to 'New Post', new_post_path, class: "button" %>
+</div>

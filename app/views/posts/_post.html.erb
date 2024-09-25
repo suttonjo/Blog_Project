@@ -1,0 +1,15 @@
+<div id="<%= dom_id post %>">
+  <p class="title is-size-1 has-text-centered mt-4">
+    <%= post.title %>
+  </p>
+
+  <% if post.image.present? %>
+  <span class="is-align-self-center">
+    <%= image_tag(url_for(post.image), style:"height: 400px;") %>
+  </span>
+  <% end %>
+
+  <p class="is-size-4 m-4 footer">
+    <%= post.body %>
+  </p>
+</div>
