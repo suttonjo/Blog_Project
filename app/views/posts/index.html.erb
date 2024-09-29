@@ -27,8 +27,12 @@
               </div>
             </div>
             <footer class="card-footer">
+            <% if post.account_id == session[:account_id] %>
               <a href="<%= edit_post_path(post) %>" class="card-footer-item">Edit</a>
               <%= link_to 'Destroy', post, method: :delete, form: { data: { turbo_confirm: "Are you sure...?" } }, class: "card-footer-item" %>
+            <% else %>
+              <a href="<%= post_path(post) %>", class="card-footer-item has-text-left", >Created By: <%= post.account.username %></a>
+            <% end %>
             </footer>
           </div>  
         </div>
@@ -36,5 +40,7 @@
     <% end %>
   </div>  
   <br>
-  <%= link_to 'New Post', new_post_path, class: "button" %>
+  <% if current_account %>
+    <%= link_to 'New Post', new_post_path, class: "button" %>
+  <% end %>
 </div>

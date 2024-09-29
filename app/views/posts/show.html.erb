@@ -3,8 +3,13 @@
 <%= render @post %>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <% if @post.account_id == session[:account_id] %>
+    <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <% end %>
+
   <%= link_to "Back to posts", posts_path %>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <% if @post.account_id == session[:account_id] %>
+    <%= button_to "Destroy this post", @post, method: :delete %>
+  <% end %>
 </div>

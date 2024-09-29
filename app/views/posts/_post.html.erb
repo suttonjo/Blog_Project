@@ -2,6 +2,10 @@
   <p class="title is-size-1 has-text-centered mt-4">
     <%= post.title %>
   </p>
+  
+  <p class="ml-2 is-size-4">Author:
+  <%= @post.account.username %>
+  </p>
 
   <% if post.image.present? %>
   <span class="is-align-self-center">
