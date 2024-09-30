@@ -47,3 +47,55 @@
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
 }
+
+.comment{
+    left: 25%;
+    width: 50%;
+}
+
+.body{
+    left: 10%;
+    width: 80%;
+}
+
+.comment_input{
+    left: 25%;
+    width: 50%;
+}
+
+.post_img{
+    max-height:800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+@media screen and (max-width: 768px) {
+    .comment {
+        left: 0;       /* Remove left positioning */
+        width: 100%;   /* Set width to 100% for full-width display */
+        max-width: 100%;
+    }
+
+    .body {
+        left: 0;       /* Remove left positioning */
+        width: 95%;   /* Set width to 100% for full-width display */
+        max-width: 100%;
+    }
+
+    .comment_input{
+        left: 0;       /* Remove left positioning */
+        width: 100%;   /* Set width to 100% for full-width display */
+        max-width: 100%;
+    }
+    
+}
+
+
+.creator_footer{
+    justify-content: flex-end;
+    margin-inline-start: auto;
+    text-align:right;
+}
+
+

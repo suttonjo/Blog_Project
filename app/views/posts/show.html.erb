@@ -2,6 +2,31 @@
 
 <%= render @post %>
 
+<div class="notification">
+    <h1 class="title is-size-3"> Comments </h1>
+</div>
+
+<% @post.comments.each do |comment|%>
+  
+    <% if comment.account != nil %>
+    <div class="card comment p-4">
+      <%= comment.text%>
+    <br>
+    <div class=" creator_footer mt-4">
+      <p>By <%= comment.account.username %> </p>
+      <p> Commented <%= comment.updated_at.strftime("%m/%d/%Y") %> </p>
+    </div>
+  </div>
+    <% end %>
+    
+<% end %>
+
+<% if current_account %>
+  <div class="card is-shadowless comment_input">
+    <%= render "comments/form", comment: @comment%>
+  </div>
+<% end %>
+
 <div>
   <% if @post.account_id == session[:account_id] %>
     <%= link_to "Edit this post", edit_post_path(@post) %> |

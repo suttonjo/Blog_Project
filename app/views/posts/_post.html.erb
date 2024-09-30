@@ -3,17 +3,17 @@
     <%= post.title %>
   </p>
   
-  <p class="ml-2 is-size-4">Author:
-  <%= @post.account.username %>
-  </p>
+  
 
   <% if post.image.present? %>
-  <span class="is-align-self-center">
-    <%= image_tag(url_for(post.image), style:"height: 400px;") %>
-  </span>
+    <%= image_tag(url_for(post.image),class:"post_img") %>
   <% end %>
 
-  <p class="is-size-4 m-4 footer">
-    <%= post.body %>
-  </p>
+  <div class="is-size-4 p-4 body card is-shadowless">
+    <p><%= post.body %></p>
+    <p class="ml-2 creator_footer">Author:
+      <%= @post.account.username %>
+    </p>
+  </div>
+
 </div>
