@@ -98,4 +98,14 @@
     text-align:right;
 }
 
+.edit_option {
+    display: inline-block; /* Ensures both the link and button stay on the same line */
+    margin-right: 10px;    /* Adds some spacing between the link and button */
+    vertical-align: middle; /* Aligns both elements vertically */
+}
 
+.action{
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 10px; 
+}
