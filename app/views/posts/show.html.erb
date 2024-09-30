@@ -11,12 +11,16 @@
     <% if comment.account != nil %>
     <div class="card comment p-4">
       <%= comment.text%>
-    <br>
-    <div class=" creator_footer mt-4">
-      <p>By <%= comment.account.username %> </p>
-      <p> Commented <%= comment.updated_at.strftime("%m/%d/%Y") %> </p>
+      <br>
+      <div class=" creator_footer mt-4">
+        <p>By <%= comment.account.username %> </p>
+        <p> Commented <%= comment.updated_at.strftime("%m/%d/%Y") %> </p>
+      </div>
+      <footer class="action creator_footer mt-5 edit_option">
+          <a href="<%= edit_comment_path(comment) %>", class="has-text-link">Edit</a> |
+          <%= button_to 'Delete Comment', comment, form: { data: { turbo_confirm: "Are you sure...?" } }, method: :delete, class: "has-text-link" %>
+      </footer>
     </div>
-  </div>
     <% end %>
     
 <% end %>
